@@ -127,7 +127,7 @@ export const NotionPage = ({
     script.setAttribute('data-reactions-enabled', "1");
     script.setAttribute('data-emit-metadata', "0");
     script.setAttribute('data-input-position', "bottom");
-    script.setAttribute('data-theme', "preferred_color_scheme");
+    script.setAttribute('data-theme', "light");
     script.setAttribute('data-lang', "zh-CN");
 
     document.getElementById('giscus')?.appendChild(script);
