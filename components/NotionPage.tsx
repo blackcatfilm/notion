@@ -11,6 +11,7 @@ import { NotionRenderer } from 'react-notion-x'
 import TweetEmbed from 'react-tweet-embed'
 
 import { Loading } from './Loading'
+import { useEffect } from 'react'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -112,10 +113,28 @@ export const NotionPage = ({
     g.recordMap = recordMap
     g.block = block
   }
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.setAttribute('data-repo', "ZhenHuangLab/notion");
+    script.setAttribute('data-repo-id', "R_kgDOLxMftA");
+    script.setAttribute('data-category', "Announcements");
+    script.setAttribute('data-category-id', "DIC_kwDOLxMftM4Ce1dA");
+    script.setAttribute('data-mapping', "pathname");
+    script.setAttribute('data-strict', "0");
+    script.setAttribute('data-reactions-enabled', "1");
+    script.setAttribute('data-emit-metadata', "0");
+    script.setAttribute('data-input-position', "bottom");
+    script.setAttribute('data-theme', "preferred_color_scheme");
+    script.setAttribute('data-lang', "zh-CN");
 
-  const socialDescription = 'React Notion X Demo'
+    document.getElementById('giscus')?.appendChild(script);
+  }, []);
+  const socialDescription = 'ZJU课程笔记by黄振，基于Notion，使用React Notion X及Vercel进行部署。'
   const socialImage =
-    'https://react-notion-x-demo.transitivebullsh.it/social.jpg'
+    'https://lfs.zhenhuang.site/images/IC1848-2024-04-16-11-18-46.png'
 
   return (
     <>
@@ -167,6 +186,7 @@ export const NotionPage = ({
         // NOTE: custom images will only take effect if previewImages is true and
         // if the image has a valid preview image defined in recordMap.preview_images[src]
       />
+      <div id="giscus" className='notion-page notion-full-page'></div>
     </>
   )
 }
