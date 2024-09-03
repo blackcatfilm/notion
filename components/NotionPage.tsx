@@ -132,9 +132,10 @@ export const NotionPage = ({
 
     document.getElementById('giscus')?.appendChild(script);
   }, []);
-  const socialDescription = 'ZJU课程笔记by黄振，基于Notion，使用React Notion X及Vercel进行部署。'
+  const socialDescription = '课程笔记by黄振，基于Notion，使用React Notion X及Vercel进行部署。'
   const socialImage =
-    'https://lfs.zhenhuang.site/images/IC1848-2024-04-16-11-18-46.png'
+    // 'https://lfs.zhenhuang.site/images/IC1848-2024-04-16-11-18-46.png'
+    'https://zhenh.notion.site/images/page-cover/webb1.jpg'
 
   return (
     <>
